@@ -1,6 +1,6 @@
-const Client = require('../models/client.model.js')
+const Client = require('../models/professional.model.js')
 
-const getClients = async (req, res) => {
+const getProfessionals = async (req, res) => {
     try {
         const products = await Client.find({});
         res.success(products)
@@ -12,7 +12,7 @@ const getClients = async (req, res) => {
 }
 
 
-const signupClient = async (req, res) => {
+const signupProfessional = async (req, res) => {
   try {
 
     const { email } = req.body;
@@ -36,7 +36,7 @@ const signupClient = async (req, res) => {
 
 
 
-const authenticateClient = async (req, res) => {
+const authenticateProfessional = async (req, res) => {
   try {
 
     const { email, password } = req.body;
@@ -58,7 +58,7 @@ const authenticateClient = async (req, res) => {
 
 
 module.exports = {
-    getClients,
-    signupClient,
-    authenticateClient
+    getProfessionals,
+    signupProfessional,
+    authenticateProfessional
 }

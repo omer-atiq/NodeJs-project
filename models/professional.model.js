@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ClientSchema = mongoose.Schema(
+const ProfessionalSchema = mongoose.Schema(
     {
         firstname: {
             type: String,
@@ -39,6 +39,6 @@ const ClientSchema = mongoose.Schema(
     }
 );
 
-const Client = mongoose.model("Client",ClientSchema);
+const Professional = mongoose.model("Professional",ProfessionalSchema);
 
-module.exports = Client;
+module.exports = Professional;

@@ -2,7 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express()
 const Client = require('./models/client.model.js');
+const Professional = require('./models/professional.model.js');
 const clientRoute = require("./routes/client.routes.js");
+const ProfessionalRoute = require("./routes/professional.routes.js");
 app.use(express.json());
 
 
@@ -28,6 +30,7 @@ app.use((req, res, next) => {
 
 
 app.use("/api/client", clientRoute);
+app.use("/api/professional", ProfessionalRoute);
 
 
 
