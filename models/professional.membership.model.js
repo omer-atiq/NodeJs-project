@@ -19,11 +19,11 @@ const servicesSchema = new mongoose.Schema({
       },
   });
 
-const ProfessionalSchema = mongoose.Schema(
+const ProfessionalMemberShipSchema = mongoose.Schema(
     {
         firstname: {
             type: String,
-            required: [true, "Please enter the first name"]
+            required: [false, "Please enter the first name"]
 
         },
         lastname: {
@@ -33,24 +33,28 @@ const ProfessionalSchema = mongoose.Schema(
         },
         email: {
             type: String,
-            required: [true, "Please enter your email"]
-        },
-        password: {
-            type: String,
-            required: [true, "Please enter your password"]
-        },
-        tempPassword: {
-            type: String,
-            required: false,
-            default: ""
+            required: [false, "Please enter your email"]
         },
         phoneNumber: {
             type: Number,
             required: false
         },
-        image: {
+        address1: {
             type: String,
             required: false
+        },
+        address2: {
+            type: String,
+            required: false
+        },
+        preferences:{
+            type:String,
+            required: false
+        },
+        membershipStatus:{
+            type:String,
+            required: false,
+            default: "Pending Approval"
         },
         yearsOfexperience:{
             type: Number,
@@ -65,6 +69,6 @@ const ProfessionalSchema = mongoose.Schema(
     }
 );
 
-const Professional = mongoose.model("Professional",ProfessionalSchema);
+const ProfessionalMemberShip = mongoose.model("ProfessionalMemberShip",ProfessionalMemberShipSchema);
 
-module.exports = Professional;
+module.exports = ProfessionalMemberShip;

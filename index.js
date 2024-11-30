@@ -34,6 +34,31 @@ app.use("/api/professional", ProfessionalRoute);
 
 
 
+// var transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: 'omer.attique@gmail.com',
+//     pass: 'cdtu nnjr quuh hswr'
+//   }
+// });
+
+// var mailOptions = {
+//   from: 'omer.attique@gmail.com',
+//   to: 'omer.attique@gmail.com',
+//   subject: 'Sending Email using Node.js',
+//   text: 'That was easy!'
+// };
+
+// transporter.sendMail(mailOptions, function(error, info){
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log('Email sent: ' + info.response);
+//   }
+// });
+
+
+
 mongoose.connect('mongodb://localhost:27017/Glamiidb', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -50,6 +75,9 @@ app.listen(3000, () => {
 app.get('/', (req, res) => {
   res.send("Hello from Node Api updated v2")
 });
+
+
+
 
 // app.post('/api/client/signup', async (req, res) => {
 //   try {

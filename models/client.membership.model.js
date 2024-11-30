@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ClientSchema = mongoose.Schema(
+const ClientMemberShipSchema = mongoose.Schema(
     {
         firstname: {
             type: String,
@@ -14,28 +14,28 @@ const ClientSchema = mongoose.Schema(
         },
         email: {
             type: String,
-            required: [true, "Please enter your email"]
-        },
-        password: {
-            type: String,
-            required: [true, "Please enter your password"]
-        },
-        tempPassword: {
-            type: String,
-            required: false,
-            default: ""
+            required: [false, "Please enter your email"]
         },
         phoneNumber: {
             type: Number,
             required: false
         },
-        image: {
+        address1: {
+            type: String,
+            required: false
+        },
+        address2: {
             type: String,
             required: false
         },
         preferences:{
             type:String,
             required: false
+        },
+        membershipStatus:{
+            type:String,
+            required: false,
+            default: "Pending Approval"
         }
     },
     {
@@ -43,6 +43,6 @@ const ClientSchema = mongoose.Schema(
     }
 );
 
-const Client = mongoose.model("Client",ClientSchema);
+const ClientMemberShip = mongoose.model("ClientMembership",ClientMemberShipSchema);
 
-module.exports = Client;
+module.exports = ClientMemberShip;
